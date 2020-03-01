@@ -1,0 +1,17 @@
+{
+    "name": "wonderhond",
+    "version": "0.1.0",
+    "description": "wonderhond",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "autoprefixer": "^6.7.4",
+        "breakpoint-sass": "^2.7.1",
+        "modularscale-sass": "^3.0.3",
+        "node-sass": "^4.12.0",
+        "normalize-scss": "^7.0.1"
+    },
+    "devDependencies": {
+        "livereload": "^0.8.0",
+        "uglify-js": "^3.4.5"
+    }
+}

@@ -1,40 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Wonderhond</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    ul {
-      padding: 0;
-    }
-    li {
-      list-style-type: none;
-      min-width: 500px;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="dist/scss/style.css">
+  <script src="dist/main.js"></script>
 </head>
+
 <body>
-  
-  <h1>Wonderhond</h1>
-
-  <img src="https://i.ytimg.com/vi/WSDwNOM_Egc/hqdefault.jpg">
-  <ul>
-    <li>
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/621098688&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-    </li>
-    <li>
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/598755735&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-    </li>
-    <li>
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/586096575&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-    </li>
-  </ul>
-
+  <div id="elm"></div>
+  <script>
+  var app = Elm.Main.init({
+    node: document.getElementById('elm')
+  });
+  </script>
 </body>
 </html>
