@@ -7,6 +7,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 0;
+      padding: 0;
+      background: url(http://api.thumbr.it/whitenoise-361x370.png?background=#ff4dff&noise=#ff4dff&density=1&opacity=90);
     }
     ul {
       padding: 0;
@@ -17,13 +20,22 @@
       margin: 0;
       padding: 0;
     }
+    .hero {
+      width: calc(100vh - 4em);
+      height: calc(100vh - 4em);
+      margin: 2em;
+      background-size: cover;
+      background-image: url('./assets/wonderhond.png');
+
+      -webkit-box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.2);
+      box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
-  
-  <h1>Wonderhond</h1>
-
-  <img src="https://i.ytimg.com/vi/WSDwNOM_Egc/hqdefault.jpg">
+  <div class="hero"></div>
+  <!-- <img src="./assets/wonderhond.png"> -->
   <ul>
     <li>
       <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/621098688&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
