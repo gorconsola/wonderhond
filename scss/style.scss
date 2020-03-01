@@ -1,3 +1,13 @@
 @import '../node_modules/normalize-scss/sass/normalize/_import-now';
 @import '../node_modules/modularscale-sass/stylesheets/modularscale';
 @import '../node_modules/breakpoint-sass/stylesheets/breakpoint';
+
+
+// SETTINGS
+
+@import "settings.variables";
+
+
+// ELEMENTS
+
+@import "elements.page";
