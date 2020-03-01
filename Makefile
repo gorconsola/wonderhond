@@ -12,12 +12,12 @@ SCSS_FILES = $(shell find scss -name '*.scss')
 
 export PATH := $(NPM_PATH):$(PATH)
 
-all: elm scss assets
+all: elm styles assets
 
 assets:
 	@mkdir -p ${DIST_DIR}/assets/ && cp -R ./assets ${DIST_DIR}
 
-build: deps elmoptimized scss minify assets
+build: deps elmoptimized styles minify assets
 
 clean:
 	@rm -Rf dist/*
@@ -66,10 +66,10 @@ livereload:
 minify:
 	@npx uglify-js ${DIST_DIR}/main.js --compress 'pure_funcs="F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | npx uglify-js --mangle --output=${DIST_DIR}/main.js\
 
-scss: $(SCSS_FILES)
+styles: $(SCSS_FILES)
 	@node-sass scss/style.scss dist/scss/style.css
 
 watch:
 	make livereload & serve & \
-	find scss -name '*.scss' | entr make scss & \
+	find scss -name '*.scss' | entr make styles & \
 	find src -name '*.elm' | entr make all
