@@ -1,13 +1,8 @@
 module Main exposing (Model, Msg(..), init, main, update, view)
 
--- Press buttons to increment and decrement a counter.
---
--- Read how it works:
---   https://guide.elm-lang.org/architecture/buttons.html
---
-
 import Browser
-import Html exposing (Html, button, div, text)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
 
@@ -15,8 +10,23 @@ import Html.Events exposing (onClick)
 -- MAIN
 
 
+main : Program () Model Msg
 main =
-    Browser.sandbox { init = init, update = update, view = view }
+    Browser.document
+        { init = init
+        , subscriptions = subscriptions
+        , update = update
+        , view = view
+        }
+
+
+
+-- SUBSCRIPTIONS
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
 
 
 
@@ -27,9 +37,9 @@ type alias Model =
     Int
 
 
-init : Model
-init =
-    0
+init : () -> ( Model, Cmd Msg )
+init _ =
+    ( 0, Cmd.none )
 
 
 
@@ -37,28 +47,26 @@ init =
 
 
 type Msg
-    = Increment
-    | Decrement
+    = NoOp
 
 
-update : Msg -> Model -> Model
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Increment ->
-            model + 1
-
-        Decrement ->
-            model - 1
+        NoOp ->
+            ( model, Cmd.none )
 
 
 
 -- VIEW
 
 
-view : Model -> Html Msg
+view : Model -> Browser.Document Msg
 view model =
-    div []
-        [ button [ onClick Decrement ] [ text "-" ]
-        , div [] [ text (String.fromInt model) ]
-        , button [ onClick Increment ] [ text "+" ]
+    { title = "Wonderhond"
+    , body =
+        [ main_ []
+            [ h1 [] [ text "Wonderhond" ]
+            ]
         ]
+    }
