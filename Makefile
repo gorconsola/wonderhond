@@ -17,7 +17,7 @@ all: elm scss assets
 assets:
 	@mkdir -p ${DIST_DIR}/assets/ && cp -R ./assets ${DIST_DIR}
 
-build: elmoptimized scss minify assets
+build: deps elmoptimized scss minify assets
 
 clean:
 	@rm -Rf dist/*
