@@ -12,3 +12,21 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.content {
+    width: 90%;
+    margin: 0 auto 5rem;
+
+    @include breakpoint($small) {
+        max-width: calc(100vmin - 3rem);
+    }
+}
+
+.soundcloud-list {
+    padding: 0;
+    list-style: none;
+}
+
+.soundcloud-list__item {
+    margin: 1rem 0;
+}
