@@ -1,4 +1,5 @@
 body {
+    font-family: sans-serif;
     background: url('/dist/assets/wonder-background.png');
     background-size: 5rem;
 }
@@ -29,4 +30,17 @@ body {
 
 .soundcloud-list__item {
     margin: 1rem 0;
+}
+
+footer {
+    margin: 5rem 0;
+    text-align: center;
+
+    a {
+        color: inherit;
+
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+    }
 }

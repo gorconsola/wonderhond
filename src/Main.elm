@@ -70,6 +70,7 @@ view model =
             , div [ class "content" ]
                 [ viewSoundCloudIframes
                 ]
+            , viewFooter
             ]
         ]
     }
@@ -96,4 +97,27 @@ viewIframe url =
             , sandbox "allow-same-origin allow-scripts"
             ]
             []
+        ]
+
+
+viewFooter : Html Msg
+viewFooter =
+    footer []
+        [ p []
+            [ a
+                [ target "_blank"
+                , rel "noopener noreferrer"
+                , href "mailto:contact@wonderhond.de"
+                ]
+                [ text "contact@wonderhond.de" ]
+            ]
+        , p []
+            [ text "design by "
+            , a
+                [ target "_blank"
+                , rel "noopener noreferrer"
+                , href "https://annevandenboogaard.com"
+                ]
+                [ text "annevandenboogaard.com" ]
+            ]
         ]

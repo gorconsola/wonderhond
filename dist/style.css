@@ -403,6 +403,7 @@ template {
   display: none; }
 
 body {
+  font-family: sans-serif;
   background: url("/dist/assets/wonder-background.png");
   background-size: 5rem; }
 
@@ -428,3 +429,11 @@ body {
 
 .soundcloud-list__item {
   margin: 1rem 0; }
+
+footer {
+  margin: 5rem 0;
+  text-align: center; }
+  footer a {
+    color: inherit; }
+    footer a:hover, footer a:focus {
+      text-decoration: none; }
