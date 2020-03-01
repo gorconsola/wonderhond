@@ -66,7 +66,34 @@ view model =
     { title = "Wonderhond"
     , body =
         [ main_ []
-            [ h1 [] [ text "Wonderhond" ]
+            [ div [ class "artwork" ] []
+            , div [ class "content" ]
+                [ viewSoundCloudIframes
+                ]
             ]
         ]
     }
+
+
+viewSoundCloudIframes : Html Msg
+viewSoundCloudIframes =
+    ul [ class "soundcloud-list" ] <|
+        List.map viewIframe
+            [ "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/621098688&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/598755735&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/586096575&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            ]
+
+
+viewIframe : String -> Html Msg
+viewIframe url =
+    li [ class "soundcloud-list__item" ]
+        [ iframe
+            [ height 166
+            , src url
+            , attribute "frameborder" "0"
+            , attribute "width" "100%"
+            , sandbox "allow-same-origin allow-scripts"
+            ]
+            []
+        ]
