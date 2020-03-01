@@ -70,6 +70,6 @@ scss: $(SCSS_FILES)
 	@node-sass scss/style.scss dist/scss/style.css
 
 watch:
-	make livereload & \
+	make livereload & serve & \
 	find scss -name '*.scss' | entr make scss & \
 	find src -name '*.elm' | entr make all
