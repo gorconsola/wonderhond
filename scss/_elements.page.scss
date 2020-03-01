@@ -1,0 +1,14 @@
+body {
+    background: url('/dist/assets/wonder-background.png');
+    background-size: 5rem;
+}
+
+.artwork {
+    width: 100vmin;
+    height: 100vmin;
+    margin: 0 auto;
+    background: url('/dist/assets/wonderhond.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

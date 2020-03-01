@@ -66,7 +66,8 @@ view model =
     { title = "Wonderhond"
     , body =
         [ main_ []
-            [ h1 [] [ text "Wonderhond" ]
+            [ div [ class "artwork" ] []
+            , div [ class "content" ] []
             ]
         ]
     }
