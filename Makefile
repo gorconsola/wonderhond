@@ -57,7 +57,7 @@ help:
 	@echo "  help                   Magic"
 	@echo "  livereload             Start livereload server, watch js and css file"
 	@echo "  minify                 Minify js files with uglify-js"
-	@echo "  scss                   Compile Scss files"
+	@echo "  styles                 Compile Scss files"
 	@echo "  watch                  Run 'make all' on Elm file change"
 
 livereload:
@@ -67,7 +67,7 @@ minify:
 	@npx uglify-js ${DIST_DIR}/main.js --compress 'pure_funcs="F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | npx uglify-js --mangle --output=${DIST_DIR}/main.js\
 
 styles: $(SCSS_FILES)
-	@node-sass scss/style.scss dist/scss/style.css
+	@node-sass scss/style.scss dist/style.css
 
 watch:
 	make livereload & serve & \
