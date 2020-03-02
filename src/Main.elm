@@ -80,9 +80,9 @@ viewSoundCloudIframes : Html Msg
 viewSoundCloudIframes =
     ul [ class "soundcloud-list" ] <|
         List.map viewIframe
-            [ "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/621098688&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/598755735&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/586096575&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            [ "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/769199890&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/769349629&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/769203862&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
             ]
 
 
