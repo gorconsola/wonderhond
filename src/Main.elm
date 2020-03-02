@@ -65,7 +65,7 @@ view : Model -> Browser.Document Msg
 view model =
     { title = "Wonderhond"
     , body =
-        [ main_ []
+        [ main_ [ class "main" ]
             [ div [ class "artwork" ] []
             , div [ class "content" ]
                 [ viewSoundCloudIframes ]

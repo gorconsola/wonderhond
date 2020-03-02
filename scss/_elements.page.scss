@@ -1,5 +1,11 @@
 body {
+    opacity: 0;
     font-family: sans-serif;
+    animation: appear .2s .3s forwards;
+}
+
+.main {
+    position: relative;
     background: url('/dist/assets/wonder-background.png');
     background-size: 5rem;
 }
@@ -8,10 +14,12 @@ body {
     width: 100vmin;
     height: 100vmin;
     margin: 3rem auto;
+    opacity: 0;
     background: url('/dist/assets/wonderhond.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    animation: appear .2s .5s forwards;
 
     @include breakpoint($small) {
         margin: 0 auto 5rem;
@@ -37,7 +45,7 @@ body {
 }
 
 footer {
-    margin: 5rem 0;
+    padding: 0 0 3rem;
     text-align: center;
 
     a {
@@ -46,5 +54,19 @@ footer {
         &:hover, &:focus {
             text-decoration: none;
         }
+    }
+
+    @include breakpoint($small) {
+        padding: 1rem 0 5rem;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }

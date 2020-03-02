@@ -403,7 +403,12 @@ template {
   display: none; }
 
 body {
+  opacity: 0;
   font-family: sans-serif;
+  animation: appear .2s .3s forwards; }
+
+.main {
+  position: relative;
   background: url("/dist/assets/wonder-background.png");
   background-size: 5rem; }
 
@@ -411,10 +416,12 @@ body {
   width: 100vmin;
   height: 100vmin;
   margin: 3rem auto;
+  opacity: 0;
   background: url("/dist/assets/wonderhond.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  animation: appear .2s .5s forwards; }
   @media (min-width: 768px) {
     .artwork {
       margin: 0 auto 5rem; } }
@@ -434,9 +441,18 @@ body {
   margin: 1rem 0; }
 
 footer {
-  margin: 5rem 0;
+  padding: 0 0 3rem;
   text-align: center; }
   footer a {
     color: inherit; }
     footer a:hover, footer a:focus {
       text-decoration: none; }
+  @media (min-width: 768px) {
+    footer {
+      padding: 1rem 0 5rem; } }
+
+@keyframes appear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
