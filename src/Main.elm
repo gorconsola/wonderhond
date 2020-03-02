@@ -68,8 +68,7 @@ view model =
         [ main_ []
             [ div [ class "artwork" ] []
             , div [ class "content" ]
-                [-- viewSoundCloudIframes
-                ]
+                [ viewSoundCloudIframes ]
             , viewFooter
             ]
         ]
