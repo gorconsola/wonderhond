@@ -5,9 +5,10 @@ body {
 }
 
 .main {
+    min-height: 100vh;
     padding-top: 3rem;
     position: relative;
-    background: url('/dist/assets/wonder-background.png');
+    background: url('/assets/wonder-background.png');
     background-size: 5rem;
 
     @include breakpoint($small) {
@@ -20,7 +21,7 @@ body {
     height: 100vmin;
     margin: 0 auto 3rem;
     opacity: 0;
-    background: url('/dist/assets/wonderhond.jpg');
+    background: url('/assets/wonderhond.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
