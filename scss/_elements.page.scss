@@ -1,16 +1,35 @@
 body {
-    background: url('/dist/assets/wonder-background.png');
+    opacity: 0;
+    font-family: sans-serif;
+    animation: appear .2s .3s forwards;
+}
+
+.main {
+    min-height: 100vh;
+    padding-top: 3rem;
+    position: relative;
+    background: url('/assets/wonder-background.png');
     background-size: 5rem;
+
+    @include breakpoint($small) {
+        padding-top: 0;
+    }
 }
 
 .artwork {
     width: 100vmin;
     height: 100vmin;
-    margin: 0 auto;
-    background: url('/dist/assets/wonderhond.jpg');
+    margin: 0 auto 3rem;
+    opacity: 0;
+    background: url('/assets/wonderhond.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    animation: appear .2s .5s forwards;
+
+    @include breakpoint($small) {
+        margin-bottom: 5rem;
+    }
 }
 
 .content {
@@ -29,4 +48,31 @@ body {
 
 .soundcloud-list__item {
     margin: 1rem 0;
+}
+
+footer {
+    padding: 0 0 3rem;
+    text-align: center;
+
+    a {
+        color: inherit;
+
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+    }
+
+    @include breakpoint($small) {
+        padding: 1rem 0 5rem;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

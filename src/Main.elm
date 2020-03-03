@@ -65,11 +65,11 @@ view : Model -> Browser.Document Msg
 view model =
     { title = "Wonderhond"
     , body =
-        [ main_ []
+        [ main_ [ class "main" ]
             [ div [ class "artwork" ] []
             , div [ class "content" ]
-                [ viewSoundCloudIframes
-                ]
+                [ viewSoundCloudIframes ]
+            , viewFooter
             ]
         ]
     }
@@ -79,9 +79,9 @@ viewSoundCloudIframes : Html Msg
 viewSoundCloudIframes =
     ul [ class "soundcloud-list" ] <|
         List.map viewIframe
-            [ "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/621098688&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/598755735&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/586096575&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            [ "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/769199890&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/769349629&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+            , "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/769203862&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
             ]
 
 
@@ -96,4 +96,27 @@ viewIframe url =
             , sandbox "allow-same-origin allow-scripts"
             ]
             []
+        ]
+
+
+viewFooter : Html Msg
+viewFooter =
+    footer []
+        [ p []
+            [ a
+                [ target "_blank"
+                , rel "noopener noreferrer"
+                , href "mailto:contact@wonderhond.de"
+                ]
+                [ text "contact@wonderhond.de" ]
+            ]
+        , p []
+            [ text "design by "
+            , a
+                [ target "_blank"
+                , rel "noopener noreferrer"
+                , href "https://annevandenboogaard.com"
+                ]
+                [ text "annevandenboogaard.com" ]
+            ]
         ]
