@@ -16,6 +16,7 @@ all: elm styles assets
 
 assets:
 	@mkdir -p ${DIST_DIR}/assets/ && cp -R ./assets ${DIST_DIR}
+	@cp index.html ${DIST_DIR}
 
 build: deps elmoptimized styles minify assets
 
@@ -67,7 +68,7 @@ minify:
 	@npx uglify-js ${DIST_DIR}/main.js --compress 'pure_funcs="F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9",pure_getters,keep_fargs=false,unsafe_comps,unsafe' | npx uglify-js --mangle --output=${DIST_DIR}/main.js\
 
 styles: $(SCSS_FILES)
-	@node-sass scss/style.scss dist/style.css
+	@node_modules/node-sass/bin/node-sass scss/style.scss dist/style.css
 
 watch:
 	make livereload & serve & \
