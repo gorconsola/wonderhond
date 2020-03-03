@@ -71,6 +71,6 @@ styles: $(SCSS_FILES)
 	@node_modules/node-sass/bin/node-sass scss/style.scss dist/style.css
 
 watch:
-	make livereload & serve & \
+	make livereload & serve ${DIST_DIR} & \
 	find scss -name '*.scss' | entr make styles & \
 	find src -name '*.elm' | entr make all
